@@ -1,4 +1,4 @@
-package com.yintu.entity;
+package com.yintu.zhongtie.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,11 +1,10 @@
-package com.yintu.entity.system;
+package com.yintu.zhongtie.entity.system;
 
-import com.yintu.entity.BaseEntity;
+import com.yintu.zhongtie.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.persistence.*;
 import java.util.List;

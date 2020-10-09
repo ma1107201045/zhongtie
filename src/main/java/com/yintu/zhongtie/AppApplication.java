@@ -1,25 +1,19 @@
-package com.yintu;/**
+package com.yintu.zhongtie;/**
  * @author mlf
  * @date 2020/10/8 8:55
  * @version 1.0
  */
 
-import com.yintu.util.SpringIOCUtil;
+import com.yintu.zhongtie.util.SpringIOCUtil;
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 
-import java.awt.*;
 import java.io.IOException;
 
-@Component
 public class AppApplication extends Application {
 
 
@@ -29,16 +23,15 @@ public class AppApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        SpringIOCUtil.init();//加载spring配置文件,初始化spring容器
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/controller/login.fxml"));
+        //SpringIOCUtil.init();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/css/style.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("Admin Login");
         primaryStage.setMaximized(false);
-        primaryStage.getIcons().add(new Image("/img/logo.png"));
+        primaryStage.getIcons().add(new Image("/img/zhongtie.png"));
         primaryStage.show();
     }
 }

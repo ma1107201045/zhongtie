@@ -14,6 +14,7 @@
         <mysql.version>8.0.20</mysql.version>
         <slf4j.version>1.6.6</slf4j.version>
         <log4j.version>1.2.12</log4j.version>
+        <hutool-all.version>5.3.9</hutool-all.version>
     </properties>
     <dependencies>
         <!-- junit单元测试 -->
@@ -159,6 +160,11 @@
         </dependency>
         <!-- log end -->
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-all.version}</version>
+        </dependency>
 
     </dependencies>
 

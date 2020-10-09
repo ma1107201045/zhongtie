@@ -35,7 +35,7 @@
         <!--配置的扫描的包（实体类所在的包） -->
         <property name="packagesToScan">
             <list>
-                <value>com.yintu.entity.system</value>
+                <value>com.yintu.zhongtie.entity.system</value>
             </list>
         </property>
         <!-- jpa的实现厂家 -->
@@ -95,7 +95,7 @@
         <property name="numTestsPerEvictionRun" value="50"/>
     </bean>
     <!-- Spring Data Jpa配置 -->
-    <jpa:repositories base-package="com.yintu.repository" transaction-manager-ref="transactionManager"
+    <jpa:repositories base-package="com.yintu.zhongtie.repository" transaction-manager-ref="transactionManager"
                       entity-manager-factory-ref="entityManagerFactory"/>
 
     <!-- Jpa 事务配置 -->

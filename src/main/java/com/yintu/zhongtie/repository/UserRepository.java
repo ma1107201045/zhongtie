@@ -1,6 +1,6 @@
-package com.yintu.repository;
+package com.yintu.zhongtie.repository;
 
-import com.yintu.entity.system.UserEntity;
+import com.yintu.zhongtie.entity.system.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

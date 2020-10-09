@@ -1,7 +1,6 @@
-package com.yintu.entity.system;
+package com.yintu.zhongtie.entity.system;
 
-import com.yintu.entity.BaseEntity;
-import lombok.AllArgsConstructor;
+import com.yintu.zhongtie.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

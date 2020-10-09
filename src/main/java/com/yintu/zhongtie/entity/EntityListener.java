@@ -1,4 +1,4 @@
-package com.yintu.entity;
+package com.yintu.zhongtie.entity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
