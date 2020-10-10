@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="533.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.MainController">
-    <children>
-        <Label layoutX="354.0" layoutY="51.0" text="主界面" />
-    </children>
-</AnchorPane>
+<BorderPane disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="91.0" prefWidth="931.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="236.0" />
+            <Label layoutX="313.0" layoutY="16.0" text="中铁盾构机管理系统">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane accessibleText="dsdsd" prefHeight="272.0" prefWidth="191.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" layoutX="-1.0" prefHeight="285.0" prefWidth="202.0" text="菜单一">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="-1.0" layoutY="27.0" prefHeight="27.0" prefWidth="201.0" text="菜单二">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="180.0" />
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="-1.0" layoutY="54.0" prefHeight="27.0" prefWidth="202.0" text="菜单三">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutY="81.0" prefHeight="27.0" prefWidth="201.0" text="菜单四">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="15.0" title="圆形图" />
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="54.0" prefWidth="931.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

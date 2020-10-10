@@ -27,10 +27,11 @@ public class AppApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/css/login.css");
+       // scene.getStylesheets().add("/css/login.css");
         primaryStage.setScene(scene);
         primaryStage.setTitle("Admin Login");
         primaryStage.setMaximized(false);
+        primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("/img/zhongtie.png"));
         primaryStage.show();
     }

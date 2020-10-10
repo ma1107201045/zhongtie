@@ -75,7 +75,7 @@ public class LoginController implements Initializable {
         }
         if (root != null) {
             Scene scene = new Scene(root);
-            scene.getStylesheets().add("/css/style.css");
+           // scene.getStylesheets().add("/css/main.css");
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Admin Main");
