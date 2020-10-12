@@ -18,20 +18,8 @@ import java.util.ResourceBundle;
  */
 public class MainController implements Initializable {
 
-    @FXML
-    private AnchorPane anchorPane;
-    @FXML
-    private PieChart pieChart;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int j = 0; j < 5; j++) {
-            TitledPane titledPane = new TitledPane();
-            GridPane gridPane = new GridPane();
-            for (int i = 0; i < 5; i++) {
-                gridPane.addRow(i, new Button("张三" + i));
-            }
-            titledPane.setContent(gridPane);
-        }
+
     }
 }

@@ -1,0 +1,20 @@
+#anchorPane-main {
+    -fx-background-image: url(../img/bg-login.png);
+    -fx-background-size: 100%;
+}
+
+#imageView-login {
+
+}
+
+#anchorPane-login {
+    -fx-background-color: white;
+}
+
+#button-login {
+    -fx-background-radius: 100;
+    -fx-background-color: rgb(43, 121, 255);
+    -fx-text-fill: WHITE;
+    -jfx-button-type: RAISED;
+    -jfx-disable-visual-focus: true;
+}
