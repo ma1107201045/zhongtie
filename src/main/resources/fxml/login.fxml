@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,14 +11,14 @@
 
 <AnchorPane fx:id="anchorPane" prefHeight="588.0" prefWidth="1024.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.LoginController">
     <children>
-        <ImageView fitHeight="580.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="630.0" fitWidth="1049.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/bg-min-login.png" />
+                <Image url="@../img/bg-max-login.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="297.0" fitWidth="376.0" layoutX="129.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/bg-max-login.png" />
+                <Image url="@../img/bg-min-login.png" />
             </image>
         </ImageView>
         <AnchorPane id="anchorPane-login" layoutX="506.0" layoutY="140.0" prefHeight="297.0" prefWidth="416.0">
@@ -27,7 +28,10 @@
                         <Image url="@../img/name-login.png" />
                     </image>
                 </ImageView>
-                <JFXTextField fx:id="nameField" layoutX="89.0" layoutY="60.0" prefHeight="32.0" prefWidth="285.0" promptText="请输入用户名" />
+                <JFXTextField fx:id="nameField" layoutX="89.0" layoutY="60.0" prefHeight="32.0" prefWidth="285.0" promptText="请输入用户名">
+               <font>
+                  <Font size="28.0" />
+               </font></JFXTextField>
                 <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="65.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../img/password-login.png" />
