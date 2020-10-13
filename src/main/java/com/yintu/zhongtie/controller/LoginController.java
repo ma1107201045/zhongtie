@@ -43,11 +43,11 @@ public class LoginController implements Initializable {
     }
 
     public void onLogin(Event event) {
-
-        new DialogBuilder((JFXButton) event.getSource()).setTitle("提示")
-                .setMessage("已完成，输出目录为")
-                .setHyperLink("www.cnblogs.com/kexing")
-                .setNegativeBtn("确定").create();
+        new DialogBuilder((JFXButton) event.getSource())
+                .setTitle("提示")
+                .setMessage("登录成功")
+                .setNegativeBtn("确定")
+                .create();
     }
 
     public void getMain() {

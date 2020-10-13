@@ -18,7 +18,7 @@
     -jfx-button-type: RAISED;
     -jfx-disable-visual-focus: true;
 }
+
 #dialog {
-    /*-fx-background-color: white;*/
     jfx-dialog-transition: center;
 }

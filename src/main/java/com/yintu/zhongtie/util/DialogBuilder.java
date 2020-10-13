@@ -8,6 +8,7 @@ import com.sun.istack.internal.Nullable;
 import java.util.Optional;
 
 import javafx.scene.control.*;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -26,8 +27,8 @@ public class DialogBuilder {
     private JFXButton negativeBtn = null;
     private JFXButton positiveBtn = null;
     private final Window window;
-    private Paint negativeBtnPaint = Paint.valueOf("#747474");//否定按钮文字颜色，默认灰色
-    private Paint positiveBtnPaint = Paint.valueOf("#0099ff");
+    private Paint negativeBtnPaint = Paint.valueOf("#FFFFFF");//否定按钮文字颜色，默认灰色
+    private Paint positiveBtnPaint = Paint.valueOf("#FFFFFF");
     private Hyperlink hyperlink = null;
     private TextField textField = null;
     private JFXAlert<Object> alert;
@@ -99,6 +100,7 @@ public class DialogBuilder {
         negativeBtn = new JFXButton(negativeBtnText);
         negativeBtn.setCancelButton(true);
         negativeBtn.setTextFill(negativeBtnPaint);
+        negativeBtn.setStyle("-fx-background-color: rgb(43, 121, 255)");
         negativeBtn.setButtonType(JFXButton.ButtonType.FLAT);
         negativeBtn.setOnAction(addEvent -> {
             alert.hideWithAnimation();
@@ -171,7 +173,6 @@ public class DialogBuilder {
     }
 
     /**
-     *
      * @param onInputListener 获取表单内容
      * @return
      */

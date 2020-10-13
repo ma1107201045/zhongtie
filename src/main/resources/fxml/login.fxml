@@ -34,15 +34,14 @@
                     </image>
                 </ImageView>
                 <JFXPasswordField fx:id="passwordField" layoutX="89.0" layoutY="92.0" prefHeight="43.0" prefWidth="285.0" promptText="请输入密码" />
-                <JFXCheckBox fx:id="checkBox" checkedColor="#0e69fc" layoutX="89.0" layoutY="146.0" prefHeight="32.0" prefWidth="147.0" text="记住密码" />
-                <JFXRippler layoutX="293.0" layoutY="152.0" maskType="FIT" prefHeight="20.0" prefWidth="79.0" ripplerFill="#1bbce4">
+                <JFXCheckBox fx:id="checkBox" checkedColor="#2B79FF" layoutX="89.0" layoutY="146.0" prefHeight="32.0" prefWidth="147.0" text="记住密码" />
+                <JFXRippler layoutX="310.0" layoutY="152.0" maskType="FIT" prefHeight="20.0" prefWidth="92.0">
                     <children>
-                        <Label text="忘记密码？" />
+                        <Label prefHeight="15.0" prefWidth="65.0" text="忘记密码？" />
                     </children>
                 </JFXRippler>
-                <JFXButton id="button-login" layoutX="89.0" layoutY="200.0" onMouseClicked="#onLogin" prefHeight="32.0" prefWidth="285.0" style="-fx-background-color: rgb(43,121,255);" text="立即登录" />
+                <JFXButton id="button-login" layoutX="89.0" layoutY="200.0" onMouseClicked="#onLogin" prefHeight="32.0" prefWidth="285.0" text="立即登录" />
             </children>
         </AnchorPane>
-          <JFXDialogLayout fx:id="dialogLayout" prefHeight="88.0" prefWidth="494.0" />
     </children>
 </AnchorPane>
