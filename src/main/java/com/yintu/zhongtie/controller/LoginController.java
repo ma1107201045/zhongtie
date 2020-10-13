@@ -1,5 +1,6 @@
 package com.yintu.zhongtie.controller;
 
+import cn.hutool.core.io.FileUtil;
 import com.jfoenix.animation.alert.JFXAlertAnimation;
 import com.jfoenix.controls.*;
 import com.yintu.zhongtie.util.DialogBuilder;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ResourceBundle;
 
 /**
@@ -42,13 +44,19 @@ public class LoginController implements Initializable {
     }
 
     public void onLogin(Event event) {
-        if ("".equals(nameField.getText()) || "".equals(passwordField.getText())) {
+        String inputName = nameField.getText();
+        String inputPassword = passwordField.getText();
+        if ("".equals(inputName) || "".equals(inputPassword)) {
             new DialogBuilder((JFXButton) event.getSource())
                     .setTitle("提示")
                     .setMessage("用户名或者密码不能为空")
                     .setNegativeBtn("确定")
                     .create();
         } else {
+            if (checkBox.isSelected())
+                if (FileUtil.exist("1.txt"))
+                    FileUtil.del(FileUtil.newFile("1.txt"));
+            FileUtil.writeString("name=" + inputName + "\npassword=" + inputPassword, FileUtil.newFile("1.txt"), Charset.defaultCharset());
             new DialogBuilder((JFXButton) event.getSource())
                     .setTitle("提示")
                     .setMessage("登录成功")
@@ -69,6 +77,8 @@ public class LoginController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("盾构设备评估系统");
             stage.getIcons().add(new Image("/img/ico.png"));
+            stage.setMinWidth(1024.0);
+            stage.setMinHeight(768.0);
             stage.show();
             Stage loginStage = (Stage) anchorPane.getScene().getWindow();
             loginStage.close();
