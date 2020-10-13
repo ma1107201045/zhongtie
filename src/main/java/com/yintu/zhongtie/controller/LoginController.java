@@ -43,6 +43,7 @@ public class LoginController implements Initializable {
     }
 
     public void onLogin(Event event) {
+
         new DialogBuilder((JFXButton) event.getSource())
                 .setTitle("提示")
                 .setMessage("登录成功")
