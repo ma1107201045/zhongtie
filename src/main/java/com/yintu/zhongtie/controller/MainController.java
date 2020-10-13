@@ -1,7 +1,5 @@
 package com.yintu.zhongtie.controller;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -31,7 +29,4 @@ public class MainController implements Initializable {
         });
     }
 
-    public void test() {
-        System.out.println("111");
-    }
 }
