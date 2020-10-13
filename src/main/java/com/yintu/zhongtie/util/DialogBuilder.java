@@ -4,11 +4,10 @@ import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.sun.istack.internal.Nullable;
-
-import java.util.Optional;
-
-import javafx.scene.control.*;
-import javafx.scene.layout.Background;
+import javafx.scene.control.Control;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -16,6 +15,8 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import java.util.Optional;
 
 /**
  * @author StarsOne

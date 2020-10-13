@@ -31,7 +31,7 @@ public class AppApplication extends Application {
         primaryStage.setTitle("盾构设备评估系统");
         primaryStage.setMaximized(false);
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("/img/zhongtie.png"));
+        primaryStage.getIcons().add(new Image("/img/ico.png"));
         primaryStage.show();
     }
 }
