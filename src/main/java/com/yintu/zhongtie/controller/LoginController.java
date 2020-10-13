@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private JFXTextField textField;
+    private JFXTextField nameField;
     @FXML
     private JFXPasswordField passwordField;
     @FXML
@@ -39,35 +39,40 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //页面加载
-
     }
 
     public void onLogin(Event event) {
+        if ("".equals(nameField.getText()) || "".equals(passwordField.getText())) {
+            new DialogBuilder((JFXButton) event.getSource())
+                    .setTitle("提示")
+                    .setMessage("用户名或者密码不能为空")
+                    .setNegativeBtn("确定")
+                    .create();
+        } else {
+            new DialogBuilder((JFXButton) event.getSource())
+                    .setTitle("提示")
+                    .setMessage("登录成功")
+                    .setNegativeBtn("确定")
+                    .create();
+            this.loadMain();
+        }
 
-        new DialogBuilder((JFXButton) event.getSource())
-                .setTitle("提示")
-                .setMessage("登录成功")
-                .setNegativeBtn("确定")
-                .create();
     }
 
-    public void getMain() {
+    public void loadMain() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-        Parent root = null;
+        Parent root;
         try {
             root = fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (root != null) {
             Scene scene = new Scene(root);
-            scene.getStylesheets().add("/css/main.css");
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.setTitle("Admin Main");
+            stage.setTitle("盾构设备评估系统");
             stage.setMaximized(false);
             stage.getIcons().add(new Image("/img/zhongtie.png"));
             stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
