@@ -1,18 +1,20 @@
 package com.yintu.zhongtie.controller;
 
+import com.jfoenix.animation.alert.JFXAlertAnimation;
 import com.jfoenix.controls.*;
+import com.yintu.zhongtie.util.DialogBuilder;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Background;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -33,21 +35,19 @@ public class LoginController implements Initializable {
     private JFXPasswordField passwordField;
     @FXML
     private CheckBox checkBox;
-    @FXML
-    private StackPane stackPane;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //页面加载
-        stackPane.setVisible(false);
+
     }
 
     public void onLogin(Event event) {
-        stackPane.setVisible(true);
-        JFXDialog dialog = new JFXDialog();
-        dialog.setContent(new Label("Content"));
-        dialog.show(stackPane);
+
+        new DialogBuilder((JFXButton) event.getSource()).setTitle("提示")
+                .setMessage("已完成，输出目录为")
+                .setHyperLink("www.cnblogs.com/kexing")
+                .setNegativeBtn("确定").create();
     }
 
     public void getMain() {
