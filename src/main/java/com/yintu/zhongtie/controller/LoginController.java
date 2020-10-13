@@ -68,8 +68,6 @@ public class LoginController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("盾构设备评估系统");
-            stage.setMaximized(true);
-            stage.setResizable(false);
             stage.getIcons().add(new Image("/img/ico.png"));
             stage.show();
             Stage loginStage = (Stage) anchorPane.getScene().getWindow();
