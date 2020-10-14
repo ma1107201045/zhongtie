@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -10,26 +13,23 @@
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.MainController">
     <left>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="508.0" prefWidth="254.0" BorderPane.alignment="CENTER" />
     </left>
     <bottom>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="53.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
     </bottom>
     <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="655.0" prefWidth="814.0" BorderPane.alignment="CENTER" />
     </center>
     <top>
-        <AnchorPane fx:id="topAnchorPane" prefHeight="37.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fx:id="imageView" fitHeight="85.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../img/bg-top-main.png" />
-                    </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-                </ImageView>
-            </children>
+        <AnchorPane id="topAnchorPane" fx:id="topAnchorPane" prefHeight="60.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="15.0" layoutY="12.0" prefHeight="36.0" prefWidth="263.0" text="盾构设备评估系统" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
         </AnchorPane>
     </top>
 </BorderPane>

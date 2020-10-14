@@ -4,7 +4,6 @@ package com.yintu.zhongtie;/**
  * @version 1.0
  */
 
-import com.yintu.zhongtie.util.SpringIOCUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
