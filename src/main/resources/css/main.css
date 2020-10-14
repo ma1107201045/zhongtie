@@ -1,3 +1,10 @@
-#topAnchorPane{
+#topAnchorPane {
     -fx-background-image: url(../img/bg-top-main.png);
+}
+
+#button-logout {
+    -fx-background-color: rgb(0, 151, 136);
+    -fx-text-fill: WHITE;
+    -jfx-button-type: RAISED;
+    -jfx-disable-visual-focus: true;
 }

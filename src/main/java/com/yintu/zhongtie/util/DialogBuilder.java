@@ -29,7 +29,7 @@ public class DialogBuilder {
     private JFXButton negativeBtn = null;
     private JFXButton positiveBtn = null;
     private final Window window;
-    private Paint negativeBtnPaint = Paint.valueOf("#FFFFFF");//否定按钮文字颜色，默认灰色
+    private Paint negativeBtnPaint = Paint.valueOf("#FFFFFF");
     private Paint positiveBtnPaint = Paint.valueOf("#FFFFFF");
     private Hyperlink hyperlink = null;
     private TextField textField = null;
@@ -57,10 +57,6 @@ public class DialogBuilder {
     public DialogBuilder setMessage(String message) {
         this.message = message;
         return this;
-    }
-
-    public DialogBuilder setPositiveBtn(String positiveBtnText) {
-        return setPositiveBtn(positiveBtnText, null, null);
     }
 
     public DialogBuilder setNegativeBtn(String negativeBtnText) {
@@ -107,7 +103,7 @@ public class DialogBuilder {
         negativeBtn.setCancelButton(true);
         negativeBtn.setTextFill(negativeBtnPaint);
         negativeBtn.setStyle("-fx-background-color: rgb(43, 121, 255)");
-        negativeBtn.setButtonType(JFXButton.ButtonType.FLAT);
+        negativeBtn.setButtonType(JFXButton.ButtonType.RAISED);
         negativeBtn.setOnAction(addEvent -> {
             alert.hideWithAnimation();
             if (negativeBtnOnclickListener != null) {
@@ -115,6 +111,17 @@ public class DialogBuilder {
             }
         });
         return this;
+    }
+
+
+    /**
+     * 设置确认按钮文字和文字颜色
+     *
+     * @param positiveBtnText 文字
+     * @return
+     */
+    public DialogBuilder setPositiveBtn(String positiveBtnText) {
+        return setPositiveBtn(positiveBtnText, null, null);
     }
 
     /**
@@ -154,7 +161,9 @@ public class DialogBuilder {
         positiveBtn = new JFXButton(positiveBtnText);
         positiveBtn.setDefaultButton(true);
         positiveBtn.setTextFill(positiveBtnPaint);
-        positiveBtn.setOnAction(closeEvent -> {
+        positiveBtn.setStyle("-fx-background-color: rgb(43, 121, 255)");
+        positiveBtn.setButtonType(JFXButton.ButtonType.RAISED);
+        positiveBtn.setOnAction(addEvent -> {
             alert.hideWithAnimation();
             if (positiveBtnOnclickListener != null) {
                 positiveBtnOnclickListener.onClick();//回调onClick方法

@@ -46,6 +46,7 @@ public class LoginController implements Initializable {
         //页面加载
     }
 
+    //登录按钮事件
     public void onLogin(Event event) {
         String inputName = nameField.getText();
         String inputPassword = passwordField.getText();
@@ -53,7 +54,7 @@ public class LoginController implements Initializable {
             new DialogBuilder(anchorPane)
                     .setTitle("提示")
                     .setMessage("用户名或者密码不能为空")
-                    .setNegativeBtn("确定")
+                    .setPositiveBtn("确定")
                     .create();
         } else {
             if (checkBox.isSelected())
@@ -66,19 +67,20 @@ public class LoginController implements Initializable {
             new DialogBuilder(anchorPane)
                     .setTitle("提示")
                     .setMessage("登录成功")
-                    .setNegativeBtn("确定")
+                    .setPositiveBtn("确定")
                     .create();
             this.loadMain();
         }
 
     }
 
+    //主窗口
     public void loadMain() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
         Parent root;
         try {
             root = fxmlLoader.load();
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root, 1600.0, 900.0);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("盾构设备评估系统");

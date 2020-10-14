@@ -30,26 +30,29 @@ public class AppApplication extends Application {
             String userInfoJson = FileUtil.readString(FileUtil.newFile("C:\\1.txt"), Charset.defaultCharset());
             JSONObject jo = (JSONObject) JSONObject.parse(userInfoJson);
             if (jo.containsKey("name") && jo.containsKey("password")) {
-                this.loadMain();
+                this.loadMain(new Stage());
             }
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("盾构设备评估系统");
-            primaryStage.setMaximized(false);
-            primaryStage.setResizable(false);
-            primaryStage.getIcons().add(new Image("/img/ico.png"));
-            primaryStage.show();
+            this.loadLogin(primaryStage);
         }
     }
 
-    public void loadMain() throws IOException {
+    public void loadLogin(Stage primaryStage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 1024.0, 580.0);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("盾构设备评估系统");
+        primaryStage.setMaximized(false);
+        primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image("/img/ico.png"));
+        primaryStage.show();
+    }
+
+    public void loadMain(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("盾构设备评估系统");
         stage.getIcons().add(new Image("/img/ico.png"));
