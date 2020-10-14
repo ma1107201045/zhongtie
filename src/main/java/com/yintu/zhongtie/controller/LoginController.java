@@ -1,6 +1,7 @@
 package com.yintu.zhongtie.controller;
 
 import cn.hutool.core.io.FileUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.jfoenix.animation.alert.JFXAlertAnimation;
 import com.jfoenix.controls.*;
 import com.yintu.zhongtie.util.DialogBuilder;
@@ -58,7 +59,10 @@ public class LoginController implements Initializable {
             if (checkBox.isSelected())
                 if (FileUtil.exist("1.txt"))
                     FileUtil.del(FileUtil.newFile("1.txt"));
-            FileUtil.writeString("name=" + inputName + "\npassword=" + inputPassword, FileUtil.newFile("1.txt"), Charset.defaultCharset());
+            JSONObject jo = new JSONObject();
+            jo.put("name", inputName);
+            jo.put("password", inputPassword);
+            FileUtil.writeString(jo.toJSONString(), FileUtil.newFile("1.txt"), Charset.defaultCharset());
             new DialogBuilder((JFXButton) event.getSource())
                     .setTitle("提示")
                     .setMessage("登录成功")

@@ -4,6 +4,8 @@ package com.yintu.zhongtie;/**
  * @version 1.0
  */
 
+import cn.hutool.core.io.FileUtil;
+import com.alibaba.fastjson.JSONObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class AppApplication extends Application {
 
@@ -23,14 +26,35 @@ public class AppApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         //SpringIOCUtil.init();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+        if (FileUtil.exist("1.txt")) {
+            String userInfoJson = FileUtil.readString(FileUtil.newFile("1.txt"), Charset.defaultCharset());
+            JSONObject jo = (JSONObject) JSONObject.parse(userInfoJson);
+            if (jo.containsKey("name") && jo.containsKey("password")) {
+                this.loadMain();
+            }
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("盾构设备评估系统");
+            primaryStage.setMaximized(false);
+            primaryStage.setResizable(false);
+            primaryStage.getIcons().add(new Image("/img/ico.png"));
+            primaryStage.show();
+        }
+    }
+
+    public void loadMain() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("盾构设备评估系统");
-        primaryStage.setMaximized(false);
-        primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("/img/ico.png"));
-        primaryStage.show();
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("盾构设备评估系统");
+        stage.getIcons().add(new Image("/img/ico.png"));
+        stage.setMinWidth(1024.0);
+        stage.setMinHeight(768.0);
+        stage.show();
     }
 }
