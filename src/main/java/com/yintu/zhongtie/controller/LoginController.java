@@ -50,20 +50,20 @@ public class LoginController implements Initializable {
         String inputName = nameField.getText();
         String inputPassword = passwordField.getText();
         if ("".equals(inputName) || "".equals(inputPassword)) {
-            new DialogBuilder((JFXButton) event.getSource())
+            new DialogBuilder(anchorPane)
                     .setTitle("提示")
                     .setMessage("用户名或者密码不能为空")
                     .setNegativeBtn("确定")
                     .create();
         } else {
             if (checkBox.isSelected())
-                if (FileUtil.exist("1.txt"))
-                    FileUtil.del(FileUtil.newFile("1.txt"));
-            JSONObject jo = new JSONObject();
+                if (FileUtil.exist("C:\\1.txt"))
+                    FileUtil.del(FileUtil.newFile("C:\\1.txt"));
+            JSONObject jo = new JSONObject(true);
             jo.put("name", inputName);
             jo.put("password", inputPassword);
-            FileUtil.writeString(jo.toJSONString(), FileUtil.newFile("1.txt"), Charset.defaultCharset());
-            new DialogBuilder((JFXButton) event.getSource())
+            FileUtil.writeString(jo.toJSONString(), FileUtil.newFile("C:\\1.txt"), Charset.defaultCharset());
+            new DialogBuilder(anchorPane)
                     .setTitle("提示")
                     .setMessage("登录成功")
                     .setNegativeBtn("确定")

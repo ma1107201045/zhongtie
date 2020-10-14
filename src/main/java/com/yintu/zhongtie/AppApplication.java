@@ -26,8 +26,8 @@ public class AppApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         //SpringIOCUtil.init();
-        if (FileUtil.exist("1.txt")) {
-            String userInfoJson = FileUtil.readString(FileUtil.newFile("1.txt"), Charset.defaultCharset());
+        if (FileUtil.exist("C:\\1.txt")) {
+            String userInfoJson = FileUtil.readString(FileUtil.newFile("C:\\1.txt"), Charset.defaultCharset());
             JSONObject jo = (JSONObject) JSONObject.parse(userInfoJson);
             if (jo.containsKey("name") && jo.containsKey("password")) {
                 this.loadMain();

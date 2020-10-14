@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
@@ -42,6 +43,10 @@ public class DialogBuilder {
      */
     public DialogBuilder(Control control) {
         window = control.getScene().getWindow();
+    }
+
+    public DialogBuilder(Pane pane) {
+        window = pane.getScene().getWindow();
     }
 
     public DialogBuilder setTitle(String title) {

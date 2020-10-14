@@ -20,15 +20,11 @@ public class MainController implements Initializable {
     private BorderPane borderPane;
     @FXML
     private AnchorPane topAnchorPane;
-    @FXML
-    private ImageView imageView;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        topAnchorPane.widthProperty().addListener((observable, oldValue, newValue) -> {
-            imageView.setImage(new Image("/img/bg-top-main.png"));
-            imageView.setFitWidth(newValue.doubleValue());
-        });
+   
     }
 
 }
