@@ -5,6 +5,7 @@
     -fx-text-fill: WHITE;
 }
 #button-logout {
+    -fx-background-radius: 0;
     -fx-background-color: rgb(0, 151, 136);
     -fx-text-fill: WHITE;
     -jfx-button-type: RAISED;
