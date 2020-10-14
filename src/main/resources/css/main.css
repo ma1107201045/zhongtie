@@ -1,7 +1,9 @@
 #topAnchorPane {
     -fx-background-image: url(../img/bg-top-main.png);
 }
-
+#label-time{
+    -fx-text-fill: WHITE;
+}
 #button-logout {
     -fx-background-color: rgb(0, 151, 136);
     -fx-text-fill: WHITE;

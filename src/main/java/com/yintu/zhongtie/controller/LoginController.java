@@ -46,6 +46,27 @@ public class LoginController implements Initializable {
         //页面加载
     }
 
+    //主窗口
+    public void loadMain() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
+        Parent root;
+        try {
+            root = fxmlLoader.load();
+            Scene scene = new Scene(root, 1600.0, 900.0);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("盾构设备评估系统");
+            stage.getIcons().add(new Image("/img/ico.png"));
+            stage.setMinWidth(1024.0);
+            stage.setMinHeight(768.0);
+            stage.show();
+            Stage loginStage = (Stage) anchorPane.getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     //登录按钮事件
     public void onLogin(Event event) {
         String inputName = nameField.getText();
@@ -73,27 +94,5 @@ public class LoginController implements Initializable {
         }
 
     }
-
-    //主窗口
-    public void loadMain() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-        Parent root;
-        try {
-            root = fxmlLoader.load();
-            Scene scene = new Scene(root, 1600.0, 900.0);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("盾构设备评估系统");
-            stage.getIcons().add(new Image("/img/ico.png"));
-            stage.setMinWidth(1024.0);
-            stage.setMinHeight(768.0);
-            stage.show();
-            Stage loginStage = (Stage) anchorPane.getScene().getWindow();
-            loginStage.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }

@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.MainController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="757.0" prefWidth="1038.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.MainController">
     <left>
         <AnchorPane prefHeight="508.0" prefWidth="254.0" BorderPane.alignment="CENTER" />
     </left>
@@ -24,7 +24,7 @@
     <top>
         <AnchorPane id="topAnchorPane" fx:id="topAnchorPane" prefHeight="62.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="15.0" layoutY="13.0" prefHeight="5.0" prefWidth="250.0" text="盾构设备评估系统" textFill="WHITE">
+            <Label layoutX="15.0" layoutY="17.0" prefHeight="5.0" prefWidth="250.0" text="盾构设备评估系统" textFill="WHITE">
                <font>
                   <Font name="Microsoft YaHei" size="20.0" />
                </font>
@@ -32,7 +32,12 @@
                   <Reflection fraction="0.9" />
                </effect>
             </Label>
-            <JFXButton id="button-logout" layoutX="1488.0" layoutY="20.0" onMouseClicked="#onLogout" prefHeight="23.0" prefWidth="72.0" text="退出登录" />
+            <Label id="label-time" fx:id="timeLabel" layoutX="876.0" layoutY="24.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXButton id="button-logout" layoutX="949.0" layoutY="14.0" onMouseClicked="#onLogout" prefHeight="23.0" prefWidth="72.0" text="退出登录" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
          </children>
         </AnchorPane>
     </top>
