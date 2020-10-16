@@ -7,7 +7,7 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="757.0" prefWidth="1038.0"
-            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.yintu.zhongtie.controller.MainController">
     <left>
         <AnchorPane prefHeight="508.0" prefWidth="254.0" BorderPane.alignment="CENTER"/>
