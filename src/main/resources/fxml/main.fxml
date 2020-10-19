@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="757.0" prefWidth="1038.0"
-            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.yintu.zhongtie.controller.MainController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="757.0" prefWidth="1038.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.MainController">
     <left>
-        <AnchorPane prefHeight="508.0" prefWidth="254.0" BorderPane.alignment="CENTER"/>
+        <AnchorPane prefHeight="508.0" prefWidth="254.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="221.0" fitWidth="212.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" />
+         </children></AnchorPane>
     </left>
     <bottom>
-        <AnchorPane prefHeight="53.0" prefWidth="1024.0" BorderPane.alignment="CENTER"/>
+        <AnchorPane prefHeight="53.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
     </bottom>
     <center>
-        <AnchorPane prefHeight="655.0" prefWidth="814.0" BorderPane.alignment="CENTER"/>
+        <AnchorPane prefHeight="655.0" prefWidth="814.0" BorderPane.alignment="CENTER" />
     </center>
     <top>
-        <AnchorPane id="topAnchorPane" fx:id="topAnchorPane" prefHeight="62.0" prefWidth="1024.0"
-                    BorderPane.alignment="CENTER">
+        <AnchorPane id="topAnchorPane" fx:id="topAnchorPane" prefHeight="62.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="15.0" layoutY="17.0" prefHeight="5.0" prefWidth="250.0" text="盾构设备评估系统"
-                       textFill="WHITE">
+                <Label layoutX="15.0" layoutY="17.0" prefHeight="5.0" prefWidth="250.0" text="盾构设备评估系统" textFill="WHITE">
                     <font>
-                        <Font name="Microsoft YaHei" size="20.0"/>
+                        <Font name="Microsoft YaHei" size="20.0" />
                     </font>
                     <effect>
-                        <Reflection fraction="0.9"/>
+                        <Reflection fraction="0.9" />
                     </effect>
                 </Label>
-                <Label id="label-time" fx:id="timeLabel" layoutX="876.0" layoutY="24.0" AnchorPane.rightAnchor="120.0"
-                       AnchorPane.topAnchor="24.0">
+                <Label id="label-time" fx:id="timeLabel" layoutX="876.0" layoutY="24.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="24.0">
                     <font>
-                        <Font size="15.0"/>
+                        <Font size="15.0" />
                     </font>
                 </Label>
-                <JFXButton id="button-logout" layoutX="949.0" layoutY="14.0" onMouseClicked="#onLogout"
-                           prefHeight="23.0" prefWidth="72.0" text="退出登录" AnchorPane.rightAnchor="20.0"
-                           AnchorPane.topAnchor="20.0"/>
+                <JFXButton id="button-logout" layoutX="949.0" layoutY="14.0" onMouseClicked="#onLogout" prefHeight="23.0" prefWidth="72.0" text="退出登录" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
             </children>
         </AnchorPane>
     </top>
     <right>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </right>
 </BorderPane>

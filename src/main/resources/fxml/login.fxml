@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -16,51 +17,57 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="588.0" prefWidth="1024.0" stylesheets="@../css/login.css"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.yintu.zhongtie.controller.LoginController">
+<AnchorPane fx:id="anchorPane" prefHeight="588.0" prefWidth="1024.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yintu.zhongtie.controller.LoginController">
     <children>
         <ImageView fitHeight="630.0" fitWidth="1049.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/bg-max-login.png"/>
+                <Image url="@../img/bg-max-login.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="297.0" fitWidth="376.0" layoutX="129.0" layoutY="140.0" pickOnBounds="true"
-                   preserveRatio="true">
+        <ImageView fitHeight="297.0" fitWidth="376.0" layoutX="129.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/bg-min-login.png"/>
+                <Image url="@../img/bg-min-login.png" />
             </image>
         </ImageView>
         <AnchorPane id="anchorPane-login" layoutX="506.0" layoutY="140.0" prefHeight="297.0" prefWidth="416.0">
             <children>
-                <ImageView fitHeight="21.0" fitWidth="17.0" layoutX="64.0" layoutY="66.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="21.0" fitWidth="17.0" layoutX="64.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../img/name-login.png"/>
+                        <Image url="@../img/name-login.png" />
                     </image>
                 </ImageView>
-                <JFXTextField fx:id="nameField" focusColor="#364f9a" layoutX="89.0" layoutY="60.0" prefHeight="32.0"
-                              prefWidth="285.0" promptText="请输入用户名"/>
-                <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="65.0" layoutY="104.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <JFXTextField fx:id="nameField" focusColor="#364f9a" layoutX="89.0" layoutY="60.0" prefHeight="32.0" prefWidth="285.0" promptText="请输入用户名">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXTextField>
+                <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="65.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../img/password-login.png"/>
+                        <Image url="@../img/password-login.png" />
                     </image>
                 </ImageView>
-                <JFXPasswordField fx:id="passwordField" layoutX="89.0" layoutY="92.0" prefHeight="43.0"
-                                  prefWidth="285.0" promptText="请输入密码"/>
-                <JFXCheckBox fx:id="checkBox" checkedColor="#2B79FF" layoutX="93.0" layoutY="146.0" prefHeight="32.0"
-                             prefWidth="143.0" text="记住密码"/>
-                <JFXRippler layoutX="310.0" layoutY="152.0" prefHeight="20.0" prefWidth="92.0">
+                <JFXPasswordField fx:id="passwordField" layoutX="89.0" layoutY="103.0" prefHeight="32.0" prefWidth="285.0" promptText="请输入密码">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXPasswordField>
+                <JFXCheckBox fx:id="checkBox" checkedColor="#2B79FF" layoutX="89.0" layoutY="141.0" prefHeight="43.0" prefWidth="143.0" text="记住密码">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXCheckBox>
+                <JFXRippler layoutX="310.0" layoutY="152.0" prefHeight="20.0" prefWidth="78.0">
                     <children>
-                        <Label prefHeight="15.0" prefWidth="78.0" text="忘记密码？"/>
+                        <Label prefHeight="18.0" prefWidth="74.0" text="忘记密码？">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                     </children>
                 </JFXRippler>
-                <JFXButton id="button-login" layoutX="89.0" layoutY="200.0" onMouseClicked="#onLogin" prefHeight="32.0"
-                           prefWidth="285.0" text="立即登录"/>
+                <JFXButton id="button-login" layoutX="89.0" layoutY="200.0" onMouseClicked="#onLogin" prefHeight="32.0" prefWidth="285.0" text="立即登录">
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
             </children>
         </AnchorPane>
-        <JFXBadge layoutX="175.0" layoutY="59.0"/>
+        <JFXBadge layoutX="175.0" layoutY="59.0" />
 
     </children>
 </AnchorPane>
