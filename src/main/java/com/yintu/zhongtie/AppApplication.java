@@ -6,6 +6,7 @@ package com.yintu.zhongtie;/**
 
 import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.yintu.zhongtie.util.SpringIOCUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +26,7 @@ public class AppApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //SpringIOCUtil.init();
+        SpringIOCUtil.init();
         if (FileUtil.exist("C:\\1.txt")) {
             String userInfoJson = FileUtil.readString(FileUtil.newFile("C:\\1.txt"), Charset.defaultCharset());
             JSONObject jo = (JSONObject) JSONObject.parse(userInfoJson);
