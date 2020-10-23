@@ -9,6 +9,10 @@ import com.yintu.zhongtie.service.BaseService;
  * @date 2020/10/23 18:13
  */
 public interface SystemUserService extends BaseService<SystemUserEntity, Long> {
-
+    /**
+     * @param name     用户名
+     * @param password 密码
+     * @return
+     */
     SystemUserEntity findByNameAndPassword(String name, String password);
 }
