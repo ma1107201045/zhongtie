@@ -2,11 +2,12 @@ package com.yintu.zhongtie.controller;
 
 import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.jfoenix.animation.alert.JFXAlertAnimation;
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import com.yintu.zhongtie.repository.UserRepository;
 import com.yintu.zhongtie.util.DialogBuilder;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import com.yintu.zhongtie.util.GlobalProperties;
+import com.yintu.zhongtie.util.SpringIOCUtil;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,12 +15,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +33,8 @@ import java.util.ResourceBundle;
  * @date 2020/10/9 17:59
  */
 public class LoginController implements Initializable {
+
+    private GlobalProperties globalProperties;
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -44,6 +47,8 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //页面加载
+        this.globalProperties = SpringIOCUtil.getApplicationContext().getBean(GlobalProperties.class);
+
     }
 
     //主窗口
@@ -79,17 +84,18 @@ public class LoginController implements Initializable {
                     .create();
         } else {
             if (checkBox.isSelected())
-                if (FileUtil.exist("C:\\1.txt"))
-                    FileUtil.del(FileUtil.newFile("C:\\1.txt"));
+                if (FileUtil.exist(globalProperties.getFilePath()))
+                    FileUtil.del(FileUtil.newFile(globalProperties.getFilePath()));
             JSONObject jo = new JSONObject(true);
             jo.put("name", inputName);
             jo.put("password", inputPassword);
-            FileUtil.writeString(jo.toJSONString(), FileUtil.newFile("C:\\1.txt"), Charset.defaultCharset());
+            FileUtil.writeString(jo.toJSONString(), FileUtil.newFile(globalProperties.getFilePath()), Charset.defaultCharset());
             new DialogBuilder(anchorPane)
                     .setTitle("提示")
                     .setMessage("登录成功")
                     .setPositiveBtn("确定")
                     .create();
+
             this.loadMain();
         }
 

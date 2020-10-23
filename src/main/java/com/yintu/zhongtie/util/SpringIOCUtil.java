@@ -10,9 +10,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringIOCUtil {
 
+    private static ApplicationContext applicationContext;
 
-    public static ApplicationContext init() {
-        return new ClassPathXmlApplicationContext("applicationContext.xml");
+    public static void init() {
+        applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+    }
+
+    public static ApplicationContext getApplicationContext() {
+        return applicationContext;
     }
 
 
