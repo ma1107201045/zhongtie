@@ -1,10 +1,7 @@
 package com.yintu.zhongtie.entity.system;
 
 import com.yintu.zhongtie.entity.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,13 +11,14 @@ import java.util.List;
  * @version 1.0
  * @date 2020/10/6 15:46
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Entity
 @Table(name = "system_user")
-public class UserEntity extends BaseEntity {
+public class SystemUserEntity extends BaseEntity {
     private static final long serialVersionUID = -4400567447315830842L;
 
     @Column(length = 20, nullable = false)
@@ -39,7 +37,7 @@ public class UserEntity extends BaseEntity {
     private String email;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "system_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {@JoinColumn(name = "role_id") })
-    private List<RoleEntity> roleEntities;
+    @JoinTable(name = "system_user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private List<SystemRoleEntity> roleEntities;
 
 }

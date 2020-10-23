@@ -4,7 +4,6 @@ import cn.hutool.core.io.FileUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.yintu.zhongtie.repository.UserRepository;
 import com.yintu.zhongtie.util.DialogBuilder;
 import com.yintu.zhongtie.util.GlobalProperties;
 import com.yintu.zhongtie.util.SpringIOCUtil;
@@ -18,10 +17,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -73,7 +70,7 @@ public class LoginController implements Initializable {
     }
 
     //登录按钮事件
-    public void onLogin(Event event) {
+    public void onLogin(MouseEvent mouseEvent) {
         String inputName = nameField.getText();
         String inputPassword = passwordField.getText();
         if ("".equals(inputName) || "".equals(inputPassword)) {
