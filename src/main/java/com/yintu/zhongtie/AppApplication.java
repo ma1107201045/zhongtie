@@ -22,8 +22,6 @@ import java.nio.charset.Charset;
 @Component
 public class AppApplication extends Application {
 
-    private GlobalProperties globalProperties;
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -31,7 +29,7 @@ public class AppApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         SpringIOCUtil.init();
-        this.globalProperties = SpringIOCUtil.getApplicationContext().getBean(GlobalProperties.class);
+        GlobalProperties globalProperties = SpringIOCUtil.getApplicationContext().getBean(GlobalProperties.class);
         if (FileUtil.exist(globalProperties.getFilePath())) {
             String userInfoJson = FileUtil.readString(FileUtil.newFile(globalProperties.getFilePath()), Charset.defaultCharset());
             JSONObject jo = (JSONObject) JSONObject.parse(userInfoJson);
@@ -41,7 +39,6 @@ public class AppApplication extends Application {
         } else {
             this.loadLogin(primaryStage);
         }
-        this.loadLogin(primaryStage);
     }
 
     public void loadLogin(Stage primaryStage) throws IOException {
